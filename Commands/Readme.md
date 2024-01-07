@@ -13,3 +13,7 @@ la commande BigFile est utile pour la gestion du stockage en aidant l'utilisateu
 
 # Lister
 cette fonction facilite la sélection et l'activation d'environnements spécifiques à partir d'une liste de répertoires disponibles, simplifiant ainsi le processus de gestion des environnements ou des contextes spécifiques dans un environnement de développement ou d'exécution.
+
+# Chat 
+#CHAT
+Dans cette commande on a utilisé l’api GPT pour développer un chatbot qui va interagir avec l’utilisateur et qu’il va créer un conversation avec lui
