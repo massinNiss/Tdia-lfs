@@ -1,4 +1,4 @@
-#L'interfce d'amorçage
+# L'interfce d'amorçage
 
  on commence notre distribution par le bootloader (chargeur d'amorçage) qui est un composant essentiel du processus de démarrage d'un système d'exploitation sur un ordinateur. Sa fonction principale est de charger le noyau du système d'exploitation en mémoire, permettant ainsi à l'ordinateur de passer de l'état de mise sous tension à celui d'exécution d'un système d'exploitation.
 	Pour cela, on a défini notre propre loader pour notre distribution ; cela a été basée sur ces différentes étapes :
@@ -9,14 +9,15 @@ maintenant on execute le script install.sh par la command :
   ---$sudo ./install.sh
 On sélectionne le thème qu’on veut activer : Dans not cas Vimix Themes.
 
-#l’affichage du nom
+# l’affichage du nom
+
 Et pour l’affichage du nom de notre distribution durent l’amorcage  ; voilà ses étapes :
 ----$sudo apt-get update && apt-get upgrade
 ----$sudo apt-get install grub-customizer
 
 Puis nous ouvrons  Grub-customizer et nous sélectionnons notre logo
 
-#Pour le changement de logo :
+# Pour le changement de logo :
 1.sudo apt install plymouth
 2.sudo apt install plymouth-themes
 3.sudo vim plymouth-preview : on écrit ce script :
