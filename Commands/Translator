@@ -1,8 +1,3 @@
-##Translator
-Cette commande utilise trans commande pour traduire un text d’une langue à une autre 
-
-#Code
-
 #!/bin/bash
 mytranslate() {
     # Check if the required argument is provided
