@@ -1,6 +1,3 @@
-##Search
- cette commande nous affiche le chemin où se localise un fichier depuis la racine /
-#Code
 #!/bin/bash
 
 if [ $# -eq 0 ]; then
