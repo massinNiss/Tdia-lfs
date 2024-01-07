@@ -1,7 +1,3 @@
-# Double 
-la commande double offre une manière interactive de détecter et de supprimer des fichiers en double dans un répertoire spécifique, permettant à l'utilisateur de choisir les fichiers à supprimer.
-
-# Code 
 #!/bin/bash
 
 # Vérifie si aucun argument n'est passé
