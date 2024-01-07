@@ -71,3 +71,40 @@ Assurez-vous de donner l'accès à l'utilisateur Tdia au répertoire $LFS/source
 
     /mnt/new/sources/work/gcc-8.2/build/ $ make
     /mnt/new/sources/work/gcc-8.2/build/ $ make install
+# Compilation des paquets
+Suivez les instructions du livre LFS pour compiler chaque paquet.
+Ce processus comprend habituellement la configuration (./configure), la compilation (make) et l'installation (make install) de chaque paquet.
+Soyez attentif aux instructions spécifiques pour chaque paquet, car certaines étapes peuvent varier.
+# Entrée dans l'environnement chroot 
+Une fois les outils temporaires installés, vous utiliserez la commande chroot pour changer dans l'environnement LFS.
+Cela permet de construire les paquets restants dans un environnement isolé qui sera le système LFS final.
+     
+    mount -v --bind /dev/pts $LFS/dev/pts
+    mount -vt proc proc $LFS/proc
+    mount -vt sysfs sysfs $LFS/sys
+    mount -vt tmpfs tmpfs $LFS/run
+Dans d'autres systèmes hôtes, /dev/shm est un point de montage pour un tmpfs. Dans ce cas, le montage de /dev ci-dessus créera uniquement /dev/
+shm en tant que répertoire dans l'environnement chroot. Dans cette situation, nous devons explicitement monter un tmpfs :
+
+    if [ -h $LFS/dev/shm ]; then
+    mkdir -pv $LFS/$(readlink $LFS/dev/shm)
+    else
+        mount -t tmpfs -o nosuid,nodev tmpfs $LFS/dev/shm
+    fi
+
+Maintenant que tous les packages nécessaires à la création du reste des outils nécessaires sont sur le système, il est temps d'entrer
+l'environnement chroot et terminez l'installation des outils temporaires. Cet environnement sera également utilisé pour installer la version finale
+système. En tant qu'utilisateur root, exécutez la commande suivante pour accéder à l'environnement qui est actuellement rempli avec
+rien que des outils temporaires :
+
+      chroot "$LFS" /usr/bin/env -i HOME=/root TERM="$TERM" PS1='(lfs chroot) \u:\w\$ ' PATH=/usr/bin:/usr/sbin /bin/bash --login   
+
+# Construction du système LFS final
+ À l'intérieur de l'environnement chroot, compilez et installez le reste des paquets suivant l'ordre indiqué dans le livre LFS.
+
+# Configuration du système LFS :
+Après l'installation des paquets, configurez les fichiers systèmes essentiels comme fstab, hostname, network, etc.
+# Nettoyage post-installation
+Après avoir installé tous les paquets, faites le nettoyage en supprimant les sources et les fichiers temporaires inutiles.
+
+ 
