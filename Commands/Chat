@@ -1,9 +1,3 @@
-#CHAT
-Dans cette commande on a utilisé l’api GPT pour développer un chatbot qui va interagir avec l’utilisateur et qu’il va créer un conversation avec lui .
-
-#Code
-
-#!/usr/bin/env python3
 #voice.py
 import pyttsx3
 import openai
