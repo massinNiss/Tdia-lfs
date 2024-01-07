@@ -61,7 +61,7 @@ Dans cette partie, nous allons découvrir comment construire un compilateur croi
 Binutils-2.41 - Passe 1
 Assurez-vous de donner l'accès à l'utilisateur Tdia au répertoire $LFS/sources.
 
-# Construction d’un vrai compilateur :
+# Construction d’un vrai compilateur :
    Ces commandes montrent le processus de construction de la bibliothèque Libstdc++ en utilisant le compilateur GCC. Notez que les commandes de configuration varient en fonction de la version spécifique de GCC que vous utilisez. Assurez-vous d'ajuster ces commandes en conséquence.
    
     mnt/new/sources/work/gcc-8.2 $ rm -rf build/
