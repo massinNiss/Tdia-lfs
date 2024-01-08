@@ -4,9 +4,9 @@ Guidés par le livre 'Linux From Scratch', nous avons créé un système de fich
 
 # Remerciement
 Nous tenons à exprimer notre sincère gratitude envers chaque membre de notre équipe :
-[Badri Insaf]
+[Badri Insaf](https://github.com/insaf-Badri)
 [ESSAFI ANASS](https://github.com/essafi01)
-[Lakhyarri Aissam]
+[Lakhyarri Aissam](https://github.com/Aissam234)
 [Rahhaoui Yasmine](https://github.com/yasminerahhaoui)
 
 pour leur engagement tout au long de ce projet de groupe. Leur passion, leur collaboration et leur dévouement ont été des sources d'inspiration et ont grandement contribué au succès de notre projet.
