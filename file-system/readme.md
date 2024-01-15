@@ -16,13 +16,15 @@ créer un nouveau système de fichiers sur un périphérique de stockage en form
     
 # Définir la variable $LFS
   "/mnt/new" c'est le chemin de notre système de fichiers.
+    
     export LFS=/mnt/lfs
 # Montage de la nouvelle partition
 Maintenant qu'un système de fichiers a été créé, la partition doit être montée pour que le système hôte puisse y accéder. Ce livre
 suppose que le système de fichiers est monté dans le répertoire spécifié par la variable d'environnement LFS décrite dans le
 section précédente.
-  mkdir -pv $LFS
-  mount -v -t ext4 /dev/<xxx> $LFS //Remplacez <xxx> par le nom de la partition LFS.
+  
+    mkdir -pv $LFS
+    mount -v -t ext4 /dev/<xxx> $LFS //Remplacez <xxx> par le nom de la partition LFS.
 
 # Packages et correctifs ( Packages and Patches)
   Les paquets et correctifs téléchargés devront être stockés quelque part de manière pratique tout au long de la construction du système. Un répertoire de travail est également nécessaire pour décompresser les sources et les construire.
@@ -33,16 +35,20 @@ Rendez ce répertoire accessible en écriture et collant.
 une archive tar de tous les fichiers nécessaires peut être téléchargée depuis l'un des sites miroirs.
 répertorié sur https://www.linuxfromscratch.org/mirrors.html#files.
 • Les fichiers peuvent être téléchargés à l'aide de wget et d'une liste wget comme décrit ci-dessous.
- wget https://www.linuxfromscratch.org/lfs/downloads/stable/wget-list-sysv
+       
+    wget https://www.linuxfromscratch.org/lfs/downloads/stable/wget-list-sysv
 
 Pour télécharger l'ensemble des paquets et correctifs en utilisant wget-list comme entrée pour la commande wget, utilisez :
-     wget --input-file=wget-list-sysv --continue --directory-prefix=$LFS/sources
+
+    wget --input-file=wget-list-sysv --continue --directory-prefix=$LFS/sources
 Ensuite, exécutez cette commande pour vous assurer que tous les paquets installés précédemment sont la propriété de l'utilisateur root :
-chown root:root $LFS/sources/*
+   
+     chown root:root $LFS/sources/*
 
 # Preparations Finals
 Dans cette section, nous commençons à peupler le système de fichiers LFS avec les éléments qui constitueront le système Linux final.
-   mkdir -v /tools
+    
+    mkdir -v /tools
    
 Nous allons créer un nouvel utilisateur appelé "Tdia" en tant que membre d'un nouveau groupe (nommé "tdia") et exécuter des commandes en tant que "Tdia" pendant le processus d'installation. En tant que root, exécutez les commandes suivantes pour ajouter le nouvel utilisateur :
 
